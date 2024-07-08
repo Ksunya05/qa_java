@@ -14,20 +14,23 @@ import static org.junit.Assert.assertEquals;
 public class LionAlexTest {
     @Mock
     Feline feline;
+
     @Test
-    public void testGetFriends () throws Exception{
+    public void testGetFriends() throws Exception {
         LionAlex lionAlex = new LionAlex(feline);
-        List<String> AlexFriends = List.of("Марти","Глория", "Мелман");
+        List<String> AlexFriends = List.of("Марти", "Глория", "Мелман");
         assertEquals(AlexFriends, lionAlex.getFriends());
     }
+
     @Test
-    public void testGetPlaceOfLiving () throws Exception{
+    public void testGetPlaceOfLiving() throws Exception {
         LionAlex lionAlex = new LionAlex(feline);
         assertEquals("Нью-Йоркский зоопарк", lionAlex.getPlaceOfLiving());
     }
+
     @Test
-    public void testGetKittens () throws Exception{
+    public void testGetKittens() throws Exception {
         LionAlex lionAlex = new LionAlex(feline);
-        assertEquals(0,lionAlex.getKittens());
+        assertEquals(0, lionAlex.getKittens());
     }
 }

@@ -15,21 +15,21 @@ import static org.junit.Assert.assertEquals;
 public class CatTest {
 
     @Mock
-     Feline feline;
+    Feline feline;
 
-@Test
-    public void testGetSound (){
-    Cat cat = new Cat (feline);
-    cat.getSound();
-    assertEquals("Мяу", cat.getSound());
-}
+    @Test
+    public void testGetSound() {
+        Cat cat = new Cat(feline);
+        cat.getSound();
+        assertEquals("Мяу", cat.getSound());
+    }
 
-@Test
-    public void testGetFood () throws Exception {
-    List<String> foodList = List.of(new String[]{"Животные", "Птицы", "Рыба"});
-    Cat cat = new Cat (feline);
-    Mockito.when(feline.eatMeat()).thenReturn(foodList);
-    assertEquals(foodList, cat.getFood());
-}
+    @Test
+    public void testGetFood() throws Exception {
+        List<String> foodList = List.of(new String[]{"Животные", "Птицы", "Рыба"});
+        Cat cat = new Cat(feline);
+        Mockito.when(feline.eatMeat()).thenReturn(foodList);
+        assertEquals(foodList, cat.getFood());
+    }
 }
 

@@ -12,20 +12,23 @@ public class ExceptionLionTest {
     private final String sex;
     private final boolean expectedResult;
 
-    public ExceptionLionTest(String sex, boolean expectedResult){
+    public ExceptionLionTest(String sex, boolean expectedResult) {
         this.sex = sex;
         this.expectedResult = expectedResult;
     }
+
     @Parameterized.Parameters
-    public static Object [][] getParameters(){
-        return new Object[][] {
+    public static Object[][] getParameters() {
+        return new Object[][]{
                 {"Человек", false}
         };
     }
+
     @Mock
     Feline feline;
+
     @Test(expected = Exception.class)
-    public void testExceptionLion() throws Exception{
+    public void testExceptionLion() throws Exception {
         Lion lion = new Lion(sex, feline);
         lion.doesHaveMane();
         assertFalse(expectedResult);
